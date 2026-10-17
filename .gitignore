@@ -1,0 +1,36 @@
+# Secrets and environment variables
+.env
+.env.*
+!.env.example
+!.env.local.example
+*.pem
+*.key
+*.p12
+*.pfx
+
+# Python
+.venv/
+.venv-*/
+venv/
+__pycache__/
+*.py[cod]
+
+# Frontend dependencies and builds
+node_modules/
+.next/
+out/
+dist/
+build/
+
+# Local databases and OS files
+*.db
+*.db-*
+*.sqlite
+*.sqlite3
+*.sqlite-*
+*.sqlite3-*
+.DS_Store
+Thumbs.db
+
+# Local data
+data/
