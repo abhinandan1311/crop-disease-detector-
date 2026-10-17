@@ -1,5 +1,6 @@
 import json
 import logging
+import os
 from pathlib import Path
 from typing import Any
 
@@ -39,6 +40,9 @@ class DiseaseModel:
                 raise ValueError("The model labels file must contain a non-empty JSON array of strings.")
             self.labels = labels_data
 
+            # Set TensorFlow's native logging and oneDNN controls before its first import.
+            os.environ.setdefault("TF_CPP_MIN_LOG_LEVEL", "2")
+            os.environ.setdefault("TF_ENABLE_ONEDNN_OPTS", "0")
             import tensorflow as tf
 
             self.model = tf.keras.models.load_model(model_path, compile=False)
