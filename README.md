@@ -4,6 +4,13 @@ Responsive Next.js application with Supabase Auth, private image storage,
 Postgres scan history, row-level access policies, realtime scan updates, and a
 FastAPI image-inference service.
 
+### Key Features
+- 🌿 **Zero-Jargon Farmer Disease Guidance**: Instant root causes, prevention guidelines, first aid, organic recipes (neem oil, baking soda), and commercial chemical treatments with precise dosages and withholding periods.
+- 🎨 **Readable Modern Typography**: Comfortable 14px–16px body text, 20px–36px headings, and elevated 16px cards with soft green/amber borders.
+- 📹 **Multimedia Scanning**: Drag-and-drop leaf photo uploads, short video clips (.mp4/.webm), and live camera walk-around scanning with automated high-clarity frame extraction.
+- 📞 **Live Plant Doctor Consultation**: Interactive Voice & Video call modal with Senior Agronomist Dr. Ramesh Patel, live call timer, call controls, and instant report sharing.
+- 🌱 **Interactive AI Agronomist Chatbot**: "Ask Verdant AI" embedded directly under the diagnosis and accessible via floating drawer across all pages, answering custom questions and quick-prompt chips.
+
 ## Start the app locally
 
 Prerequisites: Python and pip (Python 3.14.3 was used for validation), Node.js

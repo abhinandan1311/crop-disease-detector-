@@ -61,7 +61,7 @@ export function AiAgronomistChat({
         currentScan.prediction.disease,
         currentScan.prediction.is_healthy,
       )
-    : getDiseaseGuidance("Crop", "Leaf Check", false);
+    : getDiseaseGuidance("General", "Crop Advisory", false);
 
   // Auto-scroll to bottom of messages
   useEffect(() => {
