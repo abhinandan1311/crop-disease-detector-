@@ -271,6 +271,15 @@ async def health_check() -> dict[str, Any]:
     }
 
 
+@app.get("/", tags=["System"])
+async def api_root() -> dict[str, str]:
+    return {
+        "service": "AI Crop Disease Detector API",
+        "docs": "/docs",
+        "health": "/health",
+    }
+
+
 @app.get("/api/v1/diseases", tags=["Disease information"])
 async def list_diseases() -> list[dict[str, Any]]:
     await _require_supabase()
@@ -355,6 +364,7 @@ async def diagnose_crop(
     scan_id = str(uuid.uuid4())
     image_path: str | None = None
     gateway: SupabaseGateway = app.state.supabase
+    scan: dict[str, Any] = {}
     try:
         image_path = await gateway.upload_image(
             access_token=current_user.access_token,

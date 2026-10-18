@@ -29,12 +29,14 @@ export type Diagnosis = {
   prediction: Scan["top_candidates"][number];
   top_candidates: Scan["top_candidates"];
   disease_info: Disease | null;
-  image_path: string;
+  image_path: string | null;
   created_at: string | null;
 };
 
 const API_URL = (
-  process.env.NEXT_PUBLIC_API_URL ?? "http://127.0.0.1:8000"
+  typeof window !== "undefined"
+    ? (process.env.NEXT_PUBLIC_API_URL ?? "")
+    : (process.env.NEXT_PUBLIC_API_URL || process.env.BACKEND_INTERNAL_URL || "http://127.0.0.1:8000")
 ).replace(/\/+$/, "");
 
 export async function apiRequest<T>(

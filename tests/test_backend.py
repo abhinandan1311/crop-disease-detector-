@@ -145,6 +145,16 @@ class BackendApiTests(unittest.TestCase):
         return {"Authorization": f"Bearer {token}"}
 
     def test_health_and_disease_catalog(self) -> None:
+        root = self.client.get("/")
+        self.assertEqual(root.status_code, 200)
+        self.assertEqual(
+            root.json(),
+            {
+                "service": "AI Crop Disease Detector API",
+                "docs": "/docs",
+                "health": "/health",
+            },
+        )
         health = self.client.get("/health")
         self.assertEqual(health.status_code, 200)
         self.assertEqual(health.json()["status"], "healthy")
